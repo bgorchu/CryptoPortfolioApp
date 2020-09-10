@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Crypto Portfolio</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://use.fontawesome.com/5cd26fffa7.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <script type="text/javascript" src="addcrypto.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+</head>
+<body>
+	    <nav class="navbar navbar-expand-lg custom-nav">
+                
+
+        <a class="navbar-brand" href="/landing"><img id="icon" src="/images/logo.png" style="margin-right: 15px; height: 50px; width:50px"><span id="cpc">Crypto Portfolio </span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link " href="/portfolio">Add Portfolio<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/users/view">My Portfolios</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav user-cred">
+
+
+            <%if(!currentuser){%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/register">Register</a>
+                    </li>
+
+                <%}else{%>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Signed In As <%=currentuser.name%></a>
+                    </li>
+                    <li><a class="nav-link" href="/users/logout">Logout</a></li>
+                <%}%>
+
+        </ul>
+    </div>
+
+</nav>
+
+

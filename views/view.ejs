@@ -1,0 +1,86 @@
+<%- include ("./partials/header.ejs") %>
+
+<div class= "view-page">
+
+<div class="jumbo-container jumbo-view">
+<div class="jumbotron">
+  <h1 class="display-4">Your Portfolios:</h1>
+  <hr class="my-4">
+  <p>Edit or delete portfolios below.</p>
+
+  <div class="get-started">
+  	<a class="btn btn-lg jumbo-add-btn" href="/portfolio" role="button"><span id="jumbo-gradient">Add Portfolio<span></a>
+
+  </div>
+</div>
+</div>
+
+<div class="row-tables">
+
+<% for(var i=0; i<portfolio.length;i++){%>
+<div class=" crypto-con">
+	<h2>Portfolio: <%=i+1%></h2>
+
+	<div class="scroll-table" style="overflow-x:auto;">
+
+	<table class="table">
+			  <thead>
+			    <tr>
+			      <th scope="col" class="row-input"><strong>#</strong></th>
+			      <th scope="col" class="row-input"><strong>Coin</strong></th>
+			      <th scope="col" class="row-input"><strong>Amount</strong></th>
+			      <th scope="col" class="row-input"><strong>Price</strong></th>
+
+			      <th scope="col" class="row-input"><strong>In BTC</strong></th>
+
+			      <th scope="col" class="row-input"><strong>In USD</strong></th>
+			    </tr>
+			  </thead>
+
+
+	<% for(var j=0; j<portfolio[i].portfol.length;j++){%>
+
+		
+			  <tbody>
+			    <tr>
+			      <th scope="row" class="row-input"> <strong><%= j+1%> </strong></th>
+			      <td class="row-input"><%=portfolio[i].portfol[j].name%> </td>
+			      <td class="row-input"><%=portfolio[i].portfol[j].amount%> </td>
+			      <td class="row-input"><%=(portfolio[i].portfol[j].price)%></td>
+
+			      <td class="row-input"><%= (portfolio[i].portfol[j].amount * portfolio[i].portfol[j].price) / btc  %></td>
+			      <td class="row-input"><%=portfolio[i].portfol[j].amount * portfolio[i].portfol[j].price %></td>
+
+			    </tr>
+			  </tbody>
+		
+
+	<% }%>
+	</table>
+
+
+	</div>
+		<div class="port-buttons">
+			<a class="btn edit-btn" href="/users/view/<%=portfolio[i]._id%>/edit"><span class="btn-span">Edit</span></a>
+
+			<form class="delete-btn delete-form" action="/users/view/<%=portfolio[i]._id%>/remove" method="POST">
+					<button class="btn delete-btn" ><span class="btn-span">Delete<span></button>
+
+			</form>
+
+		</div>
+
+	</div>
+
+
+
+<% }%>
+
+</div>
+
+</div>
+
+
+
+
+<%- include ("./partials/footer.ejs") %>

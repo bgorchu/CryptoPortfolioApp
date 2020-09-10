@@ -1,0 +1,36 @@
+<%- include ("./partials/header.ejs") %>
+
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Cryptocurrency</th>
+      <th scope="col">Amount</th>
+      <th scope="col">BTC</th>
+      <th scope="col">USD</th>
+
+    </tr>
+  </thead>
+  <tbody>
+  	<% for(var i=0;i<test.length; i++){ %>
+
+    <tr>
+      <th scope="row"> <%=i+1 %> </th>
+      <td> <%=test[i].name%> </td>
+      <td> <%=test[i].amount%> </td>
+      <td> <%=parseFloat( ( (test[i].amount * test[i].price) / btc ).toFixed(4) )+" BTC"%> </td>
+      <td> <%="$ "+ Math.round(test[i].amount * test[i].price)%> </td>
+
+    </tr>
+    <%}%>
+  </tbody>
+</table>
+
+
+
+
+
+
+<%- include ("./partials/footer.ejs") %>

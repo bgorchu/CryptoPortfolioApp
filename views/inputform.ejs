@@ -1,0 +1,43 @@
+<%- include ("./partials/header.ejs") %>
+
+<div class="page">
+
+        <h1 id="add-portf-banner">Add your Portfolio:</h1>
+
+
+       <div class="row">
+        <div class="box">
+            <form class="form-container"action="/test" method="POST">
+                
+                <div class="inside-form">
+
+                    <div class="portfolio">
+                        <div class="form-group"><input class="form-control" type="text" name="cryptocurrency[0][name]" placeholder="cryptocurrency"></div>
+                        <div class="form-group"><input class="form-control" type="text" name="cryptocurrency[0][amount]" placeholder="amount"></div>
+                        <br>
+                    </div>
+
+                </div>
+
+
+                <br>
+
+                <div class="two-buttons">
+                    <button type="button" class="add_form_field btn btn-lg  add-button">Add New Coin +
+                    </button>
+
+
+
+                    <div class="form-group form-btn"><button class="btn btn-lg  submit ">Submit!</button></div>
+
+                </div>
+            </form>
+        </div>
+       </div>
+
+
+</div>
+
+
+
+<%- include ("./partials/footer.ejs") %>
